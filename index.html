@@ -3379,7 +3379,7 @@ function updateBanner() {
   document.body.classList.toggle('ingame', !!on); b.classList.toggle('on', !!on);
   document.body.classList.toggle('phone', !!(view === 'game' && G && G.status !== 'lobby' && isPhone()));
   // Bandeau permanent : qui est le commissaire-priseur pendant toute la vente
-  const cid = on && (G.phase === 'auction' || G.phase === 'pay') && G.auction ? G.auction.auctioneer : null;
+  const cid = null && (G.phase === 'auction' || G.phase === 'pay') && G.auction ? G.auction.auctioneer : null;
   document.body.classList.toggle('comm', !!cid);
   const comm = cid ? `<div class="commbar">${icon('gavel', 22)}<span>Commissaire-priseur : ${pav(playerById(cid), 24)}<b>${esc(pname(G, cid))}</b>${cid === ME ? ' <i>(toi : tu ne peux pas enchérir)</i>' : ''}</span></div>` : '';
   if (!on) { b.innerHTML = ''; return; }
